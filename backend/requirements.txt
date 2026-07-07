@@ -1,0 +1,17 @@
+Flask
+Flask-Cors
+PyJWT
+pymysql
+cryptography
+python-dotenv
+sentence-transformers
+faiss-cpu
+PyPDF2
+pdfplumber
+python-docx
+google-generativeai
+pandas
+openpyxl
+reportlab
+numpy
+
