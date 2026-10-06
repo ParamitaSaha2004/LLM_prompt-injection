@@ -125,7 +125,7 @@ class ResponseValidator:
 
                 return {
                     "is_safe": False,
-                    "reason": "System prompt leakage detected.",
+                    "reason": "System leakage detected",
                     "filtered_response":
                         "Security Violation: Prompt leakage detected."
                 }
@@ -166,11 +166,6 @@ class ResponseValidator:
             "population",
             "president",
             "prime minister",
-            "who is",
-            "what is",
-            "where is",
-            "when",
-            "why",
             "2+2",
             "india",
             "python",
@@ -239,7 +234,7 @@ class ResponseValidator:
                 return {
                     "is_safe": False,
                     "reason":
-                        f"Groundedness failure ({overlap_ratio:.1%}).",
+                        f"groundedness failure ({overlap_ratio:.1%}).",
                     "filtered_response":
                         "Security Warning: Response blocked because it was not grounded in the uploaded document."
                 }

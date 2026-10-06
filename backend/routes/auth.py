@@ -58,7 +58,7 @@ def register():
             cursor.execute("SELECT id FROM users WHERE username = %s OR email = %s", (username, email))
             if cursor.fetchone():
                 return jsonify({"message": "Username or Email already registered!"}), 400
-                
+
             cursor.execute(
                 "INSERT INTO users (username, email, password_hash, role) VALUES (%s, %s, %s, %s)",
                 (username, email, password_hash, role)

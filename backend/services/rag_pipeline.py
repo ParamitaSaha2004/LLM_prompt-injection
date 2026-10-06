@@ -207,8 +207,16 @@ class RAGPipeline:
         return (vec / np.linalg.norm(vec)).tolist()
 
     def search_similar_chunks(self, query, k=3):
+        
+        print("=" * 60)
+        print("RAG SEARCH")
+        print("Query:", query)
+        print("Total indexed chunks:", len(self.metadata))
+        print("=" * 60)
+        
         """Retrieve the top k similar text chunks from the vector database."""
         if not self.metadata:
+            
             return []
 
         if self.model is None:
@@ -236,6 +244,8 @@ class RAGPipeline:
                 meta_copy['score'] = scores[i]
                 results.append(meta_copy)
             return results
+     
+        
 
     def delete_document_chunks(self, document_id):
         """Remove chunks matching a document_id from memory and reload/rebuild index."""
